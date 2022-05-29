@@ -4,6 +4,10 @@ using System.Linq.Expressions;
 
 namespace TestProject;
 
+/// <summary>
+/// https://stackoverflow.com/questions/15677492/build-an-or-query-expression-progressively
+/// https://stackoverflow.com/questions/10884651/linq-adding-conditions-to-the-where-clause-conditionally
+/// </summary>
 public static class ExpressionExtensions
 {
     public static Expression<Func<T, bool>> AnyOf<T>(Expression<Func<T, bool>>[] expressions)
