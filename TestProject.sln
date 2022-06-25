@@ -4,6 +4,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{7BFDFEEE-49DF-4FC4-82BE-1980DB601637}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TheFutureOfDotNet", "TheFutureOfDotNet", "{69356D01-4E08-4C6E-A5C9-BD7ADDC052E8}"
+	ProjectSection(SolutionItems) = preProject
+		TheFutureOfDotNet\TheFutureOfDotNet.md = TheFutureOfDotNet\TheFutureOfDotNet.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "net5-classlib", "TheFutureOfDotNet\net5-classlib\net5-classlib.csproj", "{B3BE886D-6EA3-4C6A-ACF0-9FC1F726D9AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "net48-console", "TheFutureOfDotNet\net48-console\net48-console.csproj", "{66620986-F272-4236-8858-AD431941E6FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "netstd2_0.classlib", "TheFutureOfDotNet\netstd2_0.classlib\netstd2_0.classlib.csproj", "{CAC569F7-A0FA-40F0-A55C-73199C5175CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "netstd2_1.classslib", "TheFutureOfDotNet\netstd2_1.classslib\netstd2_1.classslib.csproj", "{68FC756C-E3DE-41A2-BDB5-D91AF71C1849}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +31,27 @@ Global
 		{7BFDFEEE-49DF-4FC4-82BE-1980DB601637}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BFDFEEE-49DF-4FC4-82BE-1980DB601637}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BFDFEEE-49DF-4FC4-82BE-1980DB601637}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3BE886D-6EA3-4C6A-ACF0-9FC1F726D9AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3BE886D-6EA3-4C6A-ACF0-9FC1F726D9AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3BE886D-6EA3-4C6A-ACF0-9FC1F726D9AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3BE886D-6EA3-4C6A-ACF0-9FC1F726D9AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66620986-F272-4236-8858-AD431941E6FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66620986-F272-4236-8858-AD431941E6FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66620986-F272-4236-8858-AD431941E6FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66620986-F272-4236-8858-AD431941E6FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAC569F7-A0FA-40F0-A55C-73199C5175CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAC569F7-A0FA-40F0-A55C-73199C5175CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAC569F7-A0FA-40F0-A55C-73199C5175CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAC569F7-A0FA-40F0-A55C-73199C5175CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68FC756C-E3DE-41A2-BDB5-D91AF71C1849}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68FC756C-E3DE-41A2-BDB5-D91AF71C1849}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68FC756C-E3DE-41A2-BDB5-D91AF71C1849}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68FC756C-E3DE-41A2-BDB5-D91AF71C1849}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B3BE886D-6EA3-4C6A-ACF0-9FC1F726D9AB} = {69356D01-4E08-4C6E-A5C9-BD7ADDC052E8}
+		{66620986-F272-4236-8858-AD431941E6FD} = {69356D01-4E08-4C6E-A5C9-BD7ADDC052E8}
+		{CAC569F7-A0FA-40F0-A55C-73199C5175CD} = {69356D01-4E08-4C6E-A5C9-BD7ADDC052E8}
+		{68FC756C-E3DE-41A2-BDB5-D91AF71C1849} = {69356D01-4E08-4C6E-A5C9-BD7ADDC052E8}
 	EndGlobalSection
 EndGlobal
