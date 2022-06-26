@@ -38,4 +38,5 @@ namespace TestProject
             return HashCode.Combine(Stock, Amount, Market);
         }
     }
+
 }
