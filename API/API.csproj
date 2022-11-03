@@ -14,4 +14,32 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="publish2\publish\publish\web.config" />
+      <_ContentIncludedByDefault Remove="publish2\publish\web.config" />
+      <_ContentIncludedByDefault Remove="publish2\web.config" />
+      <_ContentIncludedByDefault Remove="publish2\API.deps.json" />
+      <_ContentIncludedByDefault Remove="publish2\API.runtimeconfig.json" />
+      <_ContentIncludedByDefault Remove="publish2\appsettings.Development.json" />
+      <_ContentIncludedByDefault Remove="publish2\appsettings.json" />
+      <_ContentIncludedByDefault Remove="publish2\publish\appsettings.Development.json" />
+      <_ContentIncludedByDefault Remove="publish2\publish\appsettings.json" />
+      <_ContentIncludedByDefault Remove="publish2\publish\publish\appsettings.Development.json" />
+      <_ContentIncludedByDefault Remove="publish2\publish\publish\appsettings.json" />
+      <_ContentIncludedByDefault Remove="publish\publish2\publish\publish\web.config" />
+      <_ContentIncludedByDefault Remove="publish\publish2\publish\web.config" />
+      <_ContentIncludedByDefault Remove="publish\publish2\web.config" />
+      <_ContentIncludedByDefault Remove="publish\web.config" />
+      <_ContentIncludedByDefault Remove="publish\appsettings.Development.json" />
+      <_ContentIncludedByDefault Remove="publish\appsettings.json" />
+      <_ContentIncludedByDefault Remove="publish\publish2\API.deps.json" />
+      <_ContentIncludedByDefault Remove="publish\publish2\API.runtimeconfig.json" />
+      <_ContentIncludedByDefault Remove="publish\publish2\appsettings.Development.json" />
+      <_ContentIncludedByDefault Remove="publish\publish2\appsettings.json" />
+      <_ContentIncludedByDefault Remove="publish\publish2\publish\appsettings.Development.json" />
+      <_ContentIncludedByDefault Remove="publish\publish2\publish\appsettings.json" />
+      <_ContentIncludedByDefault Remove="publish\publish2\publish\publish\appsettings.Development.json" />
+      <_ContentIncludedByDefault Remove="publish\publish2\publish\publish\appsettings.json" />
+    </ItemGroup>
+
 </Project>
