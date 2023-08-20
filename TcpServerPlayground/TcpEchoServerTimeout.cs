@@ -24,6 +24,7 @@ class TcpEchoServerTimeout
         {
             // Create a socket to accept client connections
             server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            server.Blocking = false;
             server.Bind(new IPEndPoint(IPAddress.Any, servPort));
 
             server.Listen(backlog: BACKLOG);
@@ -39,14 +40,10 @@ class TcpEchoServerTimeout
         int totalBytesEchoed = 0;// Total bytes sent
 
         for (;;)
-        {
-            // Run forever, accepting and servicing connections
-
+        {// Run forever, accepting and servicing connections
             Socket client = null;
-
             try
             {
-
                 client = server.Accept();// Get client connection
 
                 DateTime starttime = DateTime.Now;
@@ -97,7 +94,7 @@ class TcpEchoServerTimeout
                 {
                     Console.WriteLine(se.ErrorCode + ": " + se.Message);
                 }
-                client.Close();
+                client?.Close();
             }
         }
     }

@@ -7,12 +7,10 @@ using System.Net.Sockets;
 using System.Reflection.Metadata;// For TcpClient, NetworkStream, SocketException
 using System.Threading;// For Thread.Sleep
 
-public class TcpNBEchoClient
+public class TcpNBEchoClient// Non Blocking
 {
-
     static void Main(string[] args)
     {
-
         if ((args.Length < 2) || (args.Length > 3))// Test for correct # of args
             throw new ArgumentException("Parameters: <Server> <Word> [<Port>]");
 
@@ -47,7 +45,7 @@ public class TcpNBEchoClient
         byte[] receiveBytesBuffer = new byte[fixedSz];
 
         // Make sock a nonblocking Socket
-        sock.Blocking = false;//<----------------- !!!!!
+        sock.Blocking = false;//<----------------- non blocking
         // Loop until all bytes have been echoed by server
 
         var round = 0;
@@ -104,7 +102,7 @@ public class TcpNBEchoClient
                 Console.WriteLine(se.ErrorCode + ": " + se.Message);
                 break;
             }
-            doThing();
+            Sleep();
 
             // Console.WriteLine("Received {0} bytes from server: {1}", totalBytesRcvd, Encoding.ASCII.GetString(byteBuffer, 0, totalBytesRcvd));
             totalBytesRcvd = 0;
@@ -118,7 +116,7 @@ public class TcpNBEchoClient
         Console.ReadKey();
     }
 
-    static void doThing()
+    static void Sleep()
     {
         Console.Write(".");
         Thread.Sleep(1000);
