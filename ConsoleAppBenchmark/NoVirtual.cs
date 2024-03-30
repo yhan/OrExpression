@@ -1,23 +1,23 @@
 ﻿namespace ConsoleAppBenchmark;
 
 
-public abstract class WithoutVirtual
+public abstract class NoVirtual
 {
     public int Offset { get; }
-    protected WithoutVirtual(int offset)
+    protected NoVirtual(int offset)
     {
         Offset = offset;
     }
 }
 
-public class NoVirtualImpl1 : WithoutVirtual
+public class NoVirtualImpl1 : NoVirtual
 {
     public NoVirtualImpl1() : base(1) {}
     public int Hello() => 42;
 }
 
 
-public class NoVirtualImpl2 : WithoutVirtual
+public class NoVirtualImpl2 : NoVirtual
 {
     public NoVirtualImpl2() : base(2) {}
     public int Hello() => 1;
@@ -40,6 +40,6 @@ class WithVirtualImpl2 : WithVirtual
 {
     public override int Hello()
     {
-        return 42;
+        return 1;
     }
 }
