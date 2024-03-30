@@ -28,4 +28,17 @@ public class WarnShould
     // {
     //     // won't compile
     // }
+
+    [Test]
+    public void Unchecked()
+    {
+        var maxValue = int.MaxValue;
+        Check.ThatCode(() => {
+            checked
+            {
+                int a = maxValue + 1;
+                TestContext.Write(a);
+            }
+        }).Throws<OverflowException>();
+    }
 }
