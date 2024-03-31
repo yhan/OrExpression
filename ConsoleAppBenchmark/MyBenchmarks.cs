@@ -1,5 +1,7 @@
 ﻿using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Exporters;
+using BenchmarkDotNet.Exporters.Csv;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Toolchains.InProcess.NoEmit;
 
@@ -19,7 +21,6 @@ public class MyBenchmarks
     private const int Cnt = 1000;
     public MyBenchmarks()
     {
-        
         noVirtuals = new NoVirtual[Cnt];
         for (int i = 0; i < noVirtuals.Length; i++)
         {
@@ -37,18 +38,32 @@ public class MyBenchmarks
         }
     }
 
-    // [Benchmark]
-    // public void NoVirtualTest()
-    // {
-    //     int sum = 0;
-    //     for (int i = 0; i < Cnt; i++)
-    //     {
-    //         var h = noVirtuals[i];
-    //         sum += h.Offset == 1 ? ((NoVirtualImpl1)h).Hello() : ((NoVirtualImpl2)h).Hello();
-    //     }
-    // }
-    // 
-    // 
+    [Benchmark(Baseline = true)]
+    public void NoVirtual_Cast()
+    {
+        int sum = 0;
+        for (int i = 0; i < Cnt; i++)
+        {
+            var h = noVirtuals[i];
+            if (h is NoVirtualImpl1 impl1)
+                sum += impl1.Hello();
+            else
+                sum += ((NoVirtualImpl2)h).Hello();
+        }
+    }
+
+    [Benchmark]
+    public void NoVirtual_Offset()
+    {
+        int sum = 0;
+        for (int i = 0; i < Cnt; i++)
+        {
+            var h = noVirtuals[i];
+            sum += h.Offset == 1 ? ((NoVirtualImpl1)h).Hello() : ((NoVirtualImpl2)h).Hello();
+        }
+    }
+    
+    
     // [Benchmark(Baseline = true)]
     // public void WithVirtualTest()
     // {
@@ -60,27 +75,27 @@ public class MyBenchmarks
     //     }
     // }
 
-    [Benchmark]
-    public void NoVirtualOneLegInheritance()
-    {
-        int sum = 0;
-        for (int i = 0; i < Cnt; i++)
-        {
-            var h = noVirtuals[i];
-            sum += h.Offset == 1 ? ((NoVirtualImpl1)h).World() : ((NoVirtualImpl2)h).World();
-        }
-    }
-
-    [Benchmark(Baseline = true)]
-    public void WithVirtualOneLegInheritance()
-    {
-        int sum = 0;
-        for (int i = 0; i < Cnt; i++)
-        {
-            var h = virtuals[i];
-            sum += h.World();
-        }
-    }
+    // [Benchmark]
+    // public void NoVirtualOneLegInheritance()
+    // {
+    //     int sum = 0;
+    //     for (int i = 0; i < Cnt; i++)
+    //     {
+    //         var h = noVirtuals[i];
+    //         sum += h.Offset == 1 ? ((NoVirtualImpl1)h).World() : h.World();
+    //     }
+    // }
+    //
+    // [Benchmark(Baseline = true)]
+    // public void WithVirtualOneLegInheritance()
+    // {
+    //     int sum = 0;
+    //     for (int i = 0; i < Cnt; i++)
+    //     {
+    //         var h = virtuals[i];
+    //         sum += h.World();
+    //     }
+    // }
 
 }
 
@@ -88,6 +103,8 @@ public class AntiVirusFriendlyConfig : ManualConfig
 {
     public AntiVirusFriendlyConfig()
     {
+        // AddExporter(CsvMeasurementsExporter.Default);
+        // AddExporter(RPlotExporter.Default);
         AddJob(Job.MediumRun
             .WithToolchain(InProcessNoEmitToolchain.Instance));
     }
