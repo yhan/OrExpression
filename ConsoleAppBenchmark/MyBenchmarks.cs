@@ -6,9 +6,10 @@ using BenchmarkDotNet.Toolchains.InProcess.NoEmit;
 namespace ConsoleAppBenchmark;
 
 [Config(typeof(AntiVirusFriendlyConfig))]
-[SimpleJob(RuntimeMoniker.Net472, baseline: true)]
-[SimpleJob(RuntimeMoniker.NetCoreApp30)]
+// [SimpleJob(RuntimeMoniker.Net472)]
+// [SimpleJob(RuntimeMoniker.NetCoreApp30)]
 [SimpleJob(RuntimeMoniker.NativeAot70)]
+[SimpleJob(RuntimeMoniker.Net70)]
 // [SimpleJob(RuntimeMoniker.Mono)]
 [RPlotExporter]
 public class MyBenchmarks
@@ -36,28 +37,51 @@ public class MyBenchmarks
         }
     }
 
+    // [Benchmark]
+    // public void NoVirtualTest()
+    // {
+    //     int sum = 0;
+    //     for (int i = 0; i < Cnt; i++)
+    //     {
+    //         var h = noVirtuals[i];
+    //         sum += h.Offset == 1 ? ((NoVirtualImpl1)h).Hello() : ((NoVirtualImpl2)h).Hello();
+    //     }
+    // }
+    // 
+    // 
+    // [Benchmark(Baseline = true)]
+    // public void WithVirtualTest()
+    // {
+    //     int sum = 0;
+    //     for (int i = 0; i < Cnt; i++)
+    //     {
+    //         var h = virtuals[i];
+    //         sum += h.Hello();
+    //     }
+    // }
+
     [Benchmark]
-    public void NoVirtualTest()
+    public void NoVirtualOneLegInheritance()
     {
         int sum = 0;
         for (int i = 0; i < Cnt; i++)
         {
             var h = noVirtuals[i];
-            sum += h.Offset == 1 ? ((NoVirtualImpl1)h).Hello() : ((NoVirtualImpl2)h).Hello();
+            sum += h.Offset == 1 ? ((NoVirtualImpl1)h).World() : ((NoVirtualImpl2)h).World();
         }
     }
 
-
-    [Benchmark]
-    public void WithVirtualTest()
+    [Benchmark(Baseline = true)]
+    public void WithVirtualOneLegInheritance()
     {
         int sum = 0;
         for (int i = 0; i < Cnt; i++)
         {
             var h = virtuals[i];
-            sum += h.Hello();
+            sum += h.World();
         }
     }
+
 }
 
 public class AntiVirusFriendlyConfig : ManualConfig

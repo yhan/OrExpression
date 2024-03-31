@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>ConsoleAppBenchmark.MyBenchmarks-20240330-180756</title>
+<title>ConsoleAppBenchmark.MyBenchmarks-20240331-105332</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -16,17 +16,21 @@
 BenchmarkDotNet v0.13.12, Windows 11 (10.0.22631.3296/23H2/2023Update/SunValley3)
 Intel Core i9-10885H CPU 2.40GHz, 1 CPU, 16 logical and 8 physical cores
 .NET SDK 7.0.407
-  [Host] : .NET 7.0.17 (7.0.1724.11508), X64 RyuJIT AVX2
+  [Host]        : .NET 7.0.17 (7.0.1724.11508), X64 RyuJIT AVX2
+  .NET 7.0      : .NET 7.0.17 (7.0.1724.11508), X64 RyuJIT AVX2
+  NativeAOT 7.0 : .NET 7.0.17-servicing.24115.8, X64 NativeAOT AVX2
 </code></pre>
-<pre><code>Job=MediumRun  Toolchain=InProcessNoEmitToolchain  IterationCount=15  
-LaunchCount=2  WarmupCount=10  
-</code></pre>
+<pre><code></code></pre>
 
 <table>
-<thead><tr><th>Method   </th><th>Mean</th><th>Error</th><th>StdDev</th>
+<thead><tr><th>Method   </th><th>Job    </th><th>Runtime</th><th>IterationCount</th><th>LaunchCount</th><th>WarmupCount</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Ratio</th><th>RatioSD</th>
 </tr>
-</thead><tbody><tr><td>NoVirtualTest</td><td>1.413 &mu;s</td><td>0.0133 &mu;s</td><td>0.0195 &mu;s</td>
-</tr><tr><td>WithVirtualTest</td><td>1.384 &mu;s</td><td>0.0065 &mu;s</td><td>0.0093 &mu;s</td>
+</thead><tbody><tr><td>NoVirtualTest</td><td>.NET 7.0</td><td>.NET 7.0</td><td>Default</td><td>Default</td><td>Default</td><td>1.365 &mu;s</td><td>0.0189 &mu;s</td><td>0.0177 &mu;s</td><td>1.14</td><td>0.02</td>
+</tr><tr><td>WithVirtualTest</td><td>.NET 7.0</td><td>.NET 7.0</td><td>Default</td><td>Default</td><td>Default</td><td>1.199 &mu;s</td><td>0.0143 &mu;s</td><td>0.0134 &mu;s</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>NoVirtualTest</td><td>MediumRun</td><td>.NET 7.0</td><td>15</td><td>2</td><td>10</td><td>2.059 &mu;s</td><td>0.1247 &mu;s</td><td>0.1867 &mu;s</td><td>1.38</td><td>0.14</td>
+</tr><tr><td>WithVirtualTest</td><td>MediumRun</td><td>.NET 7.0</td><td>15</td><td>2</td><td>10</td><td>1.498 &mu;s</td><td>0.0352 &mu;s</td><td>0.0516 &mu;s</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>NoVirtualTest</td><td>NativeAOT 7.0</td><td>NativeAOT 7.0</td><td>Default</td><td>Default</td><td>Default</td><td>1.199 &mu;s</td><td>0.0186 &mu;s</td><td>0.0165 &mu;s</td><td>0.85</td><td>0.01</td>
+</tr><tr><td>WithVirtualTest</td><td>NativeAOT 7.0</td><td>NativeAOT 7.0</td><td>Default</td><td>Default</td><td>Default</td><td>1.419 &mu;s</td><td>0.0113 &mu;s</td><td>0.0094 &mu;s</td><td>1.00</td><td>0.00</td>
 </tr></tbody></table>
 </body>
 </html>

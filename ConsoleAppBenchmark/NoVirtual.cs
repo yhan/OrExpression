@@ -8,12 +8,14 @@ public abstract class NoVirtual
     {
         Offset = offset;
     }
+    public int World() => 42;
 }
 
 public class NoVirtualImpl1 : NoVirtual
 {
     public NoVirtualImpl1() : base(1) {}
     public int Hello() => 42;
+    public int World() => 1;
 }
 
 
@@ -26,20 +28,17 @@ public class NoVirtualImpl2 : NoVirtual
 public abstract class WithVirtual
 {
     public abstract int Hello();
+    public virtual int World() => 42;
 }
 
 class WithVirtualImpl1 : WithVirtual
 {
-    public override int Hello()
-    {
-        return 42;
-    }
+    public override int Hello() => 42;
+    public override int World() => 1;
+
 }
 
 class WithVirtualImpl2 : WithVirtual
 {
-    public override int Hello()
-    {
-        return 1;
-    }
+    public override int Hello() => 1;
 }
