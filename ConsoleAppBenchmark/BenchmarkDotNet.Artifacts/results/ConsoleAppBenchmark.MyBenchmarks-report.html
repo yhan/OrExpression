@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>ConsoleAppBenchmark.MyBenchmarks-20240331-142351</title>
+<title>ConsoleAppBenchmark.MyBenchmarks-20240331-185420</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -25,12 +25,15 @@ Intel Core i9-10885H CPU 2.40GHz, 1 CPU, 16 logical and 8 physical cores
 <table>
 <thead><tr><th>Method    </th><th>Job    </th><th>Runtime</th><th>IterationCount</th><th>LaunchCount</th><th>WarmupCount</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Ratio</th><th>RatioSD</th>
 </tr>
-</thead><tbody><tr><td>NoVirtual_Cast</td><td>.NET 7.0</td><td>.NET 7.0</td><td>Default</td><td>Default</td><td>Default</td><td>2,913.7 ns</td><td>32.22 ns</td><td>25.15 ns</td><td>1.00</td><td>0.00</td>
-</tr><tr><td>NoVirtual_Offset</td><td>.NET 7.0</td><td>.NET 7.0</td><td>Default</td><td>Default</td><td>Default</td><td>1,400.2 ns</td><td>16.86 ns</td><td>13.16 ns</td><td>0.48</td><td>0.01</td>
-</tr><tr><td>NoVirtual_Cast</td><td>MediumRun</td><td>.NET 7.0</td><td>15</td><td>2</td><td>10</td><td>2,491.5 ns</td><td>38.81 ns</td><td>58.09 ns</td><td>1.00</td><td>0.00</td>
-</tr><tr><td>NoVirtual_Offset</td><td>MediumRun</td><td>.NET 7.0</td><td>15</td><td>2</td><td>10</td><td>1,605.7 ns</td><td>5.60 ns</td><td>8.38 ns</td><td>0.64</td><td>0.02</td>
-</tr><tr><td>NoVirtual_Cast</td><td>NativeAOT 7.0</td><td>NativeAOT 7.0</td><td>Default</td><td>Default</td><td>Default</td><td>1,064.0 ns</td><td>13.70 ns</td><td>12.15 ns</td><td>1.00</td><td>0.00</td>
-</tr><tr><td>NoVirtual_Offset</td><td>NativeAOT 7.0</td><td>NativeAOT 7.0</td><td>Default</td><td>Default</td><td>Default</td><td>830.0 ns</td><td>3.68 ns</td><td>3.27 ns</td><td>0.78</td><td>0.01</td>
+</thead><tbody><tr><td>NoVirtual_Cast</td><td>.NET 7.0</td><td>.NET 7.0</td><td>Default</td><td>Default</td><td>Default</td><td>2.997 &mu;s</td><td>0.0431 &mu;s</td><td>0.0403 &mu;s</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>WithVirtualTest</td><td>.NET 7.0</td><td>.NET 7.0</td><td>Default</td><td>Default</td><td>Default</td><td>1.247 &mu;s</td><td>0.0156 &mu;s</td><td>0.0146 &mu;s</td><td>0.42</td><td>0.01</td>
+</tr><tr><td>NoVirtual_Offset</td><td>.NET 7.0</td><td>.NET 7.0</td><td>Default</td><td>Default</td><td>Default</td><td>1.427 &mu;s</td><td>0.0285 &mu;s</td><td>0.0266 &mu;s</td><td>0.48</td><td>0.01</td>
+</tr><tr><td>NoVirtual_Cast</td><td>MediumRun</td><td>.NET 7.0</td><td>15</td><td>2</td><td>10</td><td>2.760 &mu;s</td><td>0.0623 &mu;s</td><td>0.0832 &mu;s</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>WithVirtualTest</td><td>MediumRun</td><td>.NET 7.0</td><td>15</td><td>2</td><td>10</td><td>1.466 &mu;s</td><td>0.0273 &mu;s</td><td>0.0401 &mu;s</td><td>0.53</td><td>0.02</td>
+</tr><tr><td>NoVirtual_Offset</td><td>MediumRun</td><td>.NET 7.0</td><td>15</td><td>2</td><td>10</td><td>1.432 &mu;s</td><td>0.0160 &mu;s</td><td>0.0234 &mu;s</td><td>0.52</td><td>0.02</td>
+</tr><tr><td>NoVirtual_Cast</td><td>NativeAOT 7.0</td><td>NativeAOT 7.0</td><td>Default</td><td>Default</td><td>Default</td><td>1.111 &mu;s</td><td>0.0222 &mu;s</td><td>0.0389 &mu;s</td><td>1.00</td><td>0.00</td>
+</tr><tr><td>WithVirtualTest</td><td>NativeAOT 7.0</td><td>NativeAOT 7.0</td><td>Default</td><td>Default</td><td>Default</td><td>1.417 &mu;s</td><td>0.0193 &mu;s</td><td>0.0171 &mu;s</td><td>1.23</td><td>0.05</td>
+</tr><tr><td>NoVirtual_Offset</td><td>NativeAOT 7.0</td><td>NativeAOT 7.0</td><td>Default</td><td>Default</td><td>Default</td><td>1.195 &mu;s</td><td>0.0200 &mu;s</td><td>0.0187 &mu;s</td><td>1.04</td><td>0.04</td>
 </tr></tbody></table>
 </body>
 </html>

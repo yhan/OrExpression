@@ -51,7 +51,18 @@ public class MyBenchmarks
                 sum += ((NoVirtualImpl2)h).Hello();
         }
     }
-
+    
+    [Benchmark]
+    public void WithVirtualTest()
+    {
+        int sum = 0;
+        for (int i = 0; i < Cnt; i++)
+        {
+            var h = virtuals[i];
+            sum += h.Hello();
+        }
+    }
+    
     [Benchmark]
     public void NoVirtual_Offset()
     {
@@ -62,18 +73,6 @@ public class MyBenchmarks
             sum += h.Offset == 1 ? ((NoVirtualImpl1)h).Hello() : ((NoVirtualImpl2)h).Hello();
         }
     }
-    
-    
-    // [Benchmark(Baseline = true)]
-    // public void WithVirtualTest()
-    // {
-    //     int sum = 0;
-    //     for (int i = 0; i < Cnt; i++)
-    //     {
-    //         var h = virtuals[i];
-    //         sum += h.Hello();
-    //     }
-    // }
 
     // [Benchmark]
     // public void NoVirtualOneLegInheritance()
